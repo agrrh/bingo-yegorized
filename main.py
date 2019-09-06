@@ -10,13 +10,13 @@ if __name__ == '__main__':
 
     secret = Secret(min=min, max=max)
 
-    verbose_diff = VerboseDiff(
-        Diff(
-            Guess(min=min, max=max),
-            secret
-        )
-    )
-
     Farewell(
-        Attempts(verbose_diff, 5), secret
+        Attempts(
+            VerboseDiff(
+                Diff(
+                    Guess(min=min, max=max),
+                    secret
+                )
+            ), 5
+        ), secret
     ).say()
