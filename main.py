@@ -7,6 +7,7 @@ from lib.farewell import Farewell
 
 if __name__ == '__main__':
     min, max = 1, 10
+    attempts_limit = 5
 
     secret = Secret(min=min, max=max)
 
@@ -17,6 +18,6 @@ if __name__ == '__main__':
                     Guess(min=min, max=max),
                     secret
                 )
-            ), 5
+            ), attempts_limit
         ), secret
     ).say()
